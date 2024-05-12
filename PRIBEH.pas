@@ -54,6 +54,7 @@ textcolor(14);
 writeln('Jako kovaruv syn ',jmeno,', se vydavas do sveta osvobodit princeznu Jasminu ze sparu draka. Rozloucil ses s otcem a jsi ve meste Segard na namesti, kde tvuj pribeh zacina. Mas ',zlato,' zlataku. Hodne stesti!');
 
 REPEAT
+// Pocatecni mesto
 if pokr=0 then
             begin
  repeat
@@ -158,6 +159,7 @@ if pokr=0 then
 end;
 
 
+// Les u jezera
 if pokr=1 then
                begin
                  repeat
@@ -181,6 +183,7 @@ if pokr=1 then
                  until (pokr=2) or (pokr=0);
                end;
 
+// Kolemjdouci na ceste
 if pokr=2 then begin
                  repeat
                    writeln;writeln;
@@ -233,6 +236,7 @@ if pokr=2 then begin
                  until (pokr=3) or (pokr=1);
                end;
 
+// Lesni krizovatka
 if pokr=3 then
               begin
                    repeat
@@ -258,6 +262,7 @@ if pokr=3 then
                    until (pokr=4) or (pokr=2) or (pokr=5) or (pokr=6);
               end;
 
+// Les za krizovatkou
 if pokr=4 then
               begin
                    repeat
@@ -306,6 +311,7 @@ if pokr=4 then
                    until (pokr=22) or (pokr=17) or (pokr=3) or (pokr=0);
               end;
 
+// U jeskyne
 if pokr=5 then
               begin
                    repeat
@@ -332,6 +338,7 @@ if pokr=5 then
                    until (pokr=8) or (pokr=9) or (pokr=3);
               end;
 
+// Farma
 if pokr=6 then
               begin
                    repeat
@@ -372,6 +379,7 @@ if pokr=6 then
                    until pokr=3;
               end;
 
+// Pred Cardasovou vezi
 if pokr=7 then
                begin
                     repeat
@@ -409,7 +417,7 @@ if pokr=7 then
                     until (pokr=8) or (pokr=16);
                end;
 
-
+// Tabor banditu
 if (pokr=8) and (zub=0) and (lup_b>0) then
              begin
                   repeat
@@ -425,7 +433,7 @@ if (pokr=8) and (zub=0) and (lup_b>0) then
                    case a of
                    1:begin
                        if karma=0 then begin textcolor(14); writeln('Utekl jsi banditum k jeskyni');pokr:=5; end;
-                       if karma=1 then begin textcolor(14); writeln('Nedokázal jsi utéct banditùm. Banditi te zmlatilia okradli, jsi ve mseste Segard');pokr:=0;lup_b:=lup_b+zlato;zlato:=0; end;
+                       if karma=1 then begin textcolor(14); writeln('Nedokï¿½zal jsi utï¿½ct banditï¿½m. Banditi te zmlatilia okradli, jsi ve mseste Segard');pokr:=0;lup_b:=lup_b+zlato;zlato:=0; end;
                      end;
                    2:begin
                        if (zbran>1) and (boj>0) then begin textcolor(14); writeln('Zmlatil jsi bandity a oloupil jsi je o ',lup_b,' zlata a mas ',zlato+lup_b,' zlata');zlato:=zlato+lup_b;lup_b:=0 end
@@ -438,6 +446,7 @@ if (pokr=8) and (zub=0) and (lup_b>0) then
                   until (pokr=5) or (pokr=0) or (pokr=8);
              end;
 
+// Tabor banditu - zmlaceni
 if (pokr=8) and (zub=0) and (lup_b=0) then
              begin
                   repeat
@@ -459,6 +468,7 @@ if (pokr=8) and (zub=0) and (lup_b=0) then
                   until (pokr=5) or (pokr=7);
              end;
 
+// Tabor banditu - s trolim zubem
 if (pokr=8) and (zub=1) then
                             begin
                                  repeat
@@ -482,6 +492,7 @@ if (pokr=8) and (zub=1) then
                                  until (pokr=5) or (pokr=7);
                             end;
 
+// Jeskyne 1. level
 if pokr=9 then
               begin
                    repeat
@@ -503,6 +514,7 @@ if pokr=9 then
                    until (pokr=5) or (pokr=10) or (pokr=11);
               end;
 
+// Jeskyne 2. level sever
 if pokr=10 then
                begin
                     repeat
@@ -524,6 +536,7 @@ if pokr=10 then
                     until (pokr=9) or (pokr=14) or (pokr=15);
                end;
 
+// Jeskyne 2. level zapad
 if pokr=11 then
                 begin
                      repeat
@@ -545,6 +558,7 @@ if pokr=11 then
                      until (pokr=9) or (pokr=12) or (pokr=13);
                 end;
 
+// Jeskyne propast
 if pokr=12 then
                begin
                     repeat
@@ -565,6 +579,7 @@ if pokr=12 then
                     until (pokr=0) or (pokr=11);
                end;
 
+// Jeskyne svinga
 if pokr=13 then
                begin
                     repeat
@@ -593,6 +608,7 @@ if pokr=13 then
                     until pokr=11;
                end;
 
+// Jeskyne Kaspec
 if pokr=14 then
                begin
                     repeat
@@ -712,6 +728,7 @@ if pokr=14 then
                     until pokr=10;
                end;
 
+// Jeskyne - komnata s truhlami
 if pokr=15 then
                begin
                     repeat
@@ -744,7 +761,7 @@ if pokr=15 then
                     until (pokr=10);
                end;
 
-
+// V Cardasove vezi poprve
 if pokr=16 then
                begin
                     repeat
@@ -768,7 +785,7 @@ if pokr=16 then
                             end;
                           3:begin textcolor(14); writeln('Proc me vyrusujes pri praci? Vrat se az se naucis chovat!');pokr:=random(9);writeln;
                             if pokr=0 then writeln('Objevil jsi se ve meste');
-                            if pokr=1 then writeln('Objevil jsi se u jezírka');
+                            if pokr=1 then writeln('Objevil jsi se u jezï¿½rka');
                             if pokr=2 then writeln('Objevil jsi se u kolemjdouciho');
                             if pokr=3 then writeln('Objevil jsi se na krozivatce');
                             if pokr=4 then writeln('Objevil jsi se u trola');
@@ -795,7 +812,7 @@ if pokr=16 then
                                                                                           else begin
                                                                                                  writeln('Neco mi rika, ze ke me nejsi uprimny. Vrat se, az nabydes vice uprimnosti');
                                                                                                  if pokr=0 then writeln('Objevil jsi se ve meste');
-                                                                                                 if pokr=1 then writeln('Objevil jsi se u jezírka');
+                                                                                                 if pokr=1 then writeln('Objevil jsi se u jezï¿½rka');
                                                                                                  if pokr=2 then writeln('Objevil jsi se u kolemjdouciho');
                                                                                                  if pokr=3 then writeln('Objevil jsi se na krozivatce');
                                                                                                  if pokr=4 then writeln('Objevil jsi se u trola');
@@ -813,8 +830,7 @@ if pokr=16 then
                     until pokr<>16;
                end;
 
-
-
+// Mesto Azair
 if pokr=17 then
                begin
                     repeat
@@ -902,6 +918,7 @@ if pokr=17 then
                     until (pokr=4) or (pokr=18);
                end;
 
+// Krizovatka nad Azairem
 if pokr=18 then begin
                   repeat
                     writeln;writeln;
@@ -933,7 +950,7 @@ if pokr=18 then begin
                   until (pokr=17) or (pokr=23) or (pokr=24);
                 end;
 
-
+// U Cardase ve vezi po-X-te
 if pokr=19 then
                begin
                     repeat
@@ -949,7 +966,7 @@ if pokr=19 then
                           writeln('3-Je nejaka sance, ze bych se mohl stat tvym ucednikem?');
                           writeln('4-Povida se, ze jste s Kaspecem skolili draka, nemel bys pro me nejakou radu?');
                           writeln('5-Dekuji ti za vse, moc jsi mi pomohl. Teleportoval by jsi me prosim zpet z veze?');
-                          if (talisman=0) and (sfinga_objevena=1) then writeln('6-V nedaleké jeskyni jsem naleznul sfingu, potreboval bych pomoct s jeji hadankou. Rika se v ni: "Hadanka"');
+                          if (talisman=0) and (sfinga_objevena=1) then writeln('6-V nedalekï¿½ jeskyni jsem naleznul sfingu, potreboval bych pomoct s jeji hadankou. Rika se v ni: "Hadanka"');
                           if (zbroj=2) and (saman_rada=1) then writeln('7-V jednom udoli jsem potkal orkskeho samana, ktery mi rekl, ze se tato zbroj da enchantovat, dokazal bys to?');
                           readln(a);
                           writeln;
@@ -978,7 +995,7 @@ if pokr=19 then
                     until (pokr=7);
                end;
 
-
+// Hospoda s Wintym
 if pokr=20 then begin
                    repeat
                      writeln;writeln;
@@ -1004,8 +1021,7 @@ if pokr=20 then begin
                    until (pokr=0) or (pokr=21);
                  end;
 
-
-
+// Kecani s Wintym
 if pokr=21 then begin
                     repeat
                       writeln;writeln;
@@ -1094,8 +1110,7 @@ if pokr=21 then begin
                     until pokr=20;
                  end;
 
-
-
+// V lese u trolla
 if (pokr=22) and (zub=0) then
               begin
                    repeat
@@ -1138,7 +1153,7 @@ if (pokr=22) and (zub=0) then
                    until (pokr=4) or (pokr=0) or (pokr=17);
               end;
 
-
+// U Zha-peka (Ork)
 if pokr=23 then begin
                    repeat
                      textcolor(14);
@@ -1184,8 +1199,7 @@ if pokr=23 then begin
                    until (pokr=18) or (pokr=25) or (pokr=17);
                  end;
 
-
-
+// Pred hradem
 if pokr=24 then begin
                    repeat
                      writeln;writeln;
@@ -1210,7 +1224,7 @@ if pokr=24 then begin
                          if zbran=4 then
                                     begin
                                       textcolor(14);
-                                      writeln('Z brany jsou trosky a ty vstupujes do haly.');
+                                      writeln('Z brany jsou trosky a ty vstupujes do hradni haly.');
                                       brana:=1;
                                       pokr:=26;
                                     end
@@ -1220,7 +1234,7 @@ if pokr=24 then begin
                          if boj=2 then
                                     begin
                                       textcolor(14);
-                                      writeln('Pomoci kaspecovske finty jsi se dostal do hradu a otevrel branu zevnitr pro pripadny utek. Vztupujes do hradni haly');
+                                      writeln('Pomoci kaspecovske finty jsi se dostal do hradu a otevrel branu zevnitr pro pripadny uteku. Vztupujes do hradni haly');
                                       brana:=1;
                                       pokr:=26;
                                     end
@@ -1231,8 +1245,7 @@ if pokr=24 then begin
                    until (pokr=18);
                  end;
 
-
-
+// Krypta
 if pokr=25 then begin
                   repeat
                      writeln;writeln;
@@ -1472,7 +1485,7 @@ if pokr=25 then begin
                   until (pokr=17) or (pokr=23);
                 end;
 
-
+// V hradu level 1
 if pokr=26 then
               begin
                    repeat

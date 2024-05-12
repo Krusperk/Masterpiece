@@ -1485,27 +1485,58 @@ if pokr=25 then begin
                   until (pokr=17) or (pokr=23);
                 end;
 
-// V hradu level 1
+// V hradni hale
 if pokr=26 then
               begin
                    repeat
-                     writeln;writeln;
-                     textcolor(11);
-                     writeln('Zadej akci (1-3)');
-                     textcolor(15);
-                     writeln('1-Utect');
-                     writeln('2-Bojovat s trolem');
-                     writeln('3-Posrat se strachy');
-                     readln(a);
-                     writeln;
-                     case a of
-                     1: writeln('hoj');
-                     2: writeln('zdar');
-                     else writeln('chyba');
-                     end;
-                   until pokr=18;
+                      writeln;writeln;
+                      textcolor(14);
+                      writeln('Ah! Vecere prisla! Mas s sebou i kecup? Ah! Ale to nevadi, ve me lednici se nejaky najde.');
+                      textcolor(11);
+                      writeln('Zadej akci (1-2)');
+                      textcolor(15);
+                      writeln('1-Dost reci, delas mi chute na jidlo! Jdeme bojovat!');
+                      writeln('2-Hodit po Parkovi jeho oblibeny kecup a utect');
+                      readln(a);
+                      writeln;
+                      case a of
+                      1: begin
+                          writeln('Jak je libo! *SLINT*');
+                          pokr:= 27;
+                      end;
+                      2: begin
+                        writeln('Utekl jsi pred hrad');
+                        pokr:= 24;
+                      end;
+                      else writeln('chyba');
+                      end;
+                   until (pokr=27) or (pokr=24);
               end;
 
+// Bitka s Parkem 1 cast
+if pokr=27 then
+              begin
+                   repeat
+                      writeln;writeln;
+                      textcolor(14);
+                      writeln('Parek otevira souboj svym ohnivym dechem!');
+                      textcolor(11);
+                      writeln('Zadej akci (1-2)');
+                      textcolor(15);
+                      writeln('1-Dost reci, delas mi chute na jidlo! Jdeme bojovat!');
+                      writeln('2-Hodit po Parkovi jeho oblibeny kecup a utect');
+                      readln(a);
+                      writeln;
+                      case a of
+                      1: begin
+                          writeln('Jak je libo! *SLINT*');
+                          pokr:= 27;
+                      end;
+                      2: writeln('zdar');
+                      else writeln('chyba');
+                      end;
+                   until pokr=18;
+              end;
 
 UNTIL F=1;
 readln;

@@ -1,0 +1,77 @@
+Dosel jsi pred brany hradu, ktery obyva mocny drak Parek.
+
+-zabusit na obrovska vrata klepadlem
+  nic se nestalo
+
+-zarvat na Parka
+  nic se nestalo
+
+-(kaspecovsky vycvik) pomoci kaspecovske finty se dostat dovnitr
+  pomoci kaspecovske finty jsi se dostal do hradu a otevrel branu zevnitr pro pripadny utek
+
+-pouzit na branu Crush-pack
+  z brany jsou trosky a ty vstupujes do haly
+
+-odejít
+
+1)
+
+Ah! Vecere prisla! Mas s sebou i kecup? Ah! Ale to nevadi, ve me lednici se nejaky najde.
+
+-Dost reci, delas mi chute na jidlo! Jdeme bojovat! //Ale parek s kecupem bych si fakt dal!
+  Jak je libo! *SLINT*
+  
+
+-Hodit po Parkovi jeho oblibeny kecup a utect
+
+
+2) //PRVNI FAZE SOUBOJE
+
+Parek otevira souboj svym ohnivym dechem
+
+-Absorbovat ohen magickou zbroji
+  Zbroj absorbovala ohen a ty se vrhas do protiutoku
+     --pouzit obratku o 360 stupnu a zautocit na trup
+         Ou, to bylo naivni! Parek te odhodil a nez ses zvedl, byl fuc. (trapas+1)
+     --vyuzit sve momentum a dostat se drakovi za zada a tam zasadit uder
+         Parek nestacil zareagovat a nez se nadal, mel poskozene kridlo. Ovsem behem oslavovani uspesneho uderu se ti Parek nekam ztratil. (zasah+1)
+
+-Uskocit za masivni kamenny pilir
+  Utoku ses vyhnul, ale Parka jsi ztratil z dohledu a nekam ti zmizel. (fail+1)
+
+
+3) //DRUHA FAZE SOUBOJE
+Pri hledani Parka mas na vyber ze 2 chodeb, kterou si vyberes?
+-vydat se po schodisti nahoru
+   Dosel jsi na mensi balkon a v mistnosti pod tebou je nic netusici Parek.
+   --hodit drakovi na hlavu velky balvan pripraveny hned vedle tebe
+       Velky balvan si stezi uzvedl, a tak neni divu, ze jsi pri hodu minul a misto hlavy trefil drakovo kridlo. Drak se stahl. (zasah+1)
+   --skocit drakovi na zada a zasahnout kridlo
+       Ups...Parek jen predstiral, ze o tobe nevi a mrstne se ti vyhnul. Jak si tak odpocivas na zemi, drak opet nekam zmizel. (trapas+1)
+-sklepeni jsou ta spravna volba
+   Sebevedome kracis sklepenim, kdyz v tom se za tebou ozve rev.
+   --jit zjistit, co se stalo
+       Jakmile jsi dosel k mistu hluku, vidis, ze se pod drakem proboril kus podlahy. Vyuzivas situace a vrazis drakovi kopi do jeho nechranene zadnice. (zasah+1)
+   --tohle neni vhodne bojiste, jit dal
+       Podle pokracujiciho hluku za tebou to vypada, ze se pod drakem proboril kus podlahy a ty jsi tak prisel o moznost uderit. (fail+1)
+
+4) //TRETI FAZE SOUBOJE
+Pokracujes v pronasledovani Parka, ten se ovsem najednou rozhodl prestat utikat, otocil se a obdaril te zakernym usklebkem. Pote proti tobe vyrazi, davajic ti minimu casu zareagovat.
+-zkusit vyuzit drakovy rychlosti
+   Jak se k tobe Parek blizi, pripravujes se na uskok na posledni chvili... ovsem skarede ses prepocital a Parek te smetl. (trapas+1)
+-rozbehnout se proti Parkovi
+   Tvuj protiutok Parka mirne vyvedl z koncentrace, cehoz vyuzivas a svym mocnym mecem draka zranujes na brise. (zasah+1)
+-pripravit si mec k uderu
+   Jakmile Parek spatril mocny Crush-pack pripraveny uderit, rychle zmenil nazor a primo pred tebou probehl zdi. (fail+1)
+
+5) //ZAVERECNA FAZE
+(zasah=3) Pronasledujes Parka az na vrchol hradni veze a vidis, ze Parek uz neni schopen boje. Vitezoslavne k nemu pristupujes a zasazujes smrtelny uder.
+(zasah=2) Pronasledujes Parka az na vrchol hradni veze, pripraveneho na zaverecne klani. 
+            --pouzit na draka quagmire
+                Hazis pod Parka quagmire, cimz jsi mu naprosto znemoznil pohybu. Nyni jiz bezbranneho Parka dorazis Crush-pakem. 
+(fail>=2) Pronasledujes Parka az na vrchol hradni veze. Ale cestou jsi narazil na sve pratele Cadrase, Kaspeca a Wintyho. Cadras ti moudre pravi: "Sledovali jsme bitvu se svym znamym samanem Zha-pekem a rikali jsme si, ze ti to trva nejak moc dlouho, tak jsme prisli Parka vyridit sami."   
+          Pote se vsichni na draka vrhnou a spolecne ho udolaji. Ovsem, jelikoz to jsou strasne svine, Kaspem a Winty podlehnou svym zranenim a tak slavis vitezstvi jen s Cadrasem. "Stejne to byli hajdalaci." Pravi Cadras nakonec.
+(trapas=2) Pronasledujes Parka az na vrchol hradni veze, pripraveneho na zaverecne klani. Ovsem diky svym cetnym zranenim nejsi pro Parka zdatnym souperem a v bitve podlehas svym zranenim.
+(trapas=3) Pronasledujes Parka az na vrchol hradni veze. Jakmile te Parek spatril, okamzite proti tobe pouzil svuj ohnivy dech.
+           (fire-resist_on) Dech jsi vykryl svou fire-enchanted zbroji, coz te ovsem na dlouho nezachranilo, protoze vzapeti ti Parek ukousl hlavu.
+           (fire-resist_off) Jelikoz jsi jiz vypotreboval silu sve zbroje, jsi na prach.

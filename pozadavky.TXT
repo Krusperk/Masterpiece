@@ -1,0 +1,20 @@
+banditi: zbraò 2 + skill 1
+troll:   (zbraò 3 + skill 1 + zbroj 1) or (zbraò 3 + skill 2)
+         
+drak:    zbraò 4 + zbroj 3 + skill 2 + quagmire
+
+
+50                + (100)       + 150    + 200              + 250     + (500/350) = 1000/1100/1250
+pocatecni kapital + kolemjdouci + turiny + truhla v jeskyni + banditi + poklad
+
+skill 1 = 50
+skill 2 = 150
+zbran 2 = 200 
+zbran 3 = 350
+zbroj 1 = 250
+zbroj 2 = znuluje peníze a vezme zub
+-------------
+zbraò 4 = za talisman
+zbroj 3 = zbroj 2 + fire enchant od Cadrase
+
+

@@ -70,7 +70,7 @@ Pokracujes v pronasledovani Parka, ten se ovsem najednou rozhodl prestat utikat,
             --pouzit na draka quagmire
                 Hazis pod Parka quagmire, cimz jsi mu naprosto znemoznil pohybu. Nyni jiz bezbranneho Parka dorazis Crush-pakem. 
 (fail>=2) Pronasledujes Parka az na vrchol hradni veze. Ale cestou jsi narazil na sve pratele Cadrase, Kaspeca a Wintyho. Cadras ti moudre pravi: "Sledovali jsme bitvu se svym znamym samanem Zha-pekem a rikali jsme si, ze ti to trva nejak moc dlouho, tak jsme prisli Parka vyridit sami."   
-          Pote se vsichni na draka vrhnou a spolecne ho udolaji. Ovsem, jelikoz to jsou strasne svine, Kaspem a Winty podlehnou svym zranenim a tak slavis vitezstvi jen s Cadrasem. "Stejne to byli hajdalaci." Pravi Cadras nakonec.
+          Pote se vsichni na draka vrhnou a spolecne ho udolaji. Ovsem, jelikoz to jsou strasne svine, Kaspec a Winty podlehnou svym zranenim a tak slavis vitezstvi jen s Cadrasem. "Stejne to byli hajdalaci." Pravi Cadras nakonec.
 (trapas=2) Pronasledujes Parka az na vrchol hradni veze, pripraveneho na zaverecne klani. Ovsem diky svym cetnym zranenim nejsi pro Parka zdatnym souperem a v bitve podlehas svym zranenim.
 (trapas=3) Pronasledujes Parka az na vrchol hradni veze. Jakmile te Parek spatril, okamzite proti tobe pouzil svuj ohnivy dech.
            (fire-resist_on) Dech jsi vykryl svou fire-enchanted zbroji, coz te ovsem na dlouho nezachranilo, protoze vzapeti ti Parek ukousl hlavu.

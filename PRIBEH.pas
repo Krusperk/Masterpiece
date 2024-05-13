@@ -6,10 +6,10 @@ uses crt;
 var
 F,a,zlato,zbran,zbroj,lup_k,lup_b,zub,pochoden,boj,odpracovano,karma,talisman,truhly,slysel,balada,struny,kaspec,saman_poprve,cadras_poprve,rada_od_wintyho,
 cadras,vykaspecovano,pokecano_kaspec,konec_otazek,pokecano_winty,prozkoumana_vez,sfinga_objevena,poslano_pro_struny,objevena_krypta,kosta_winty,kosta_kaspec,
-kosta_cadras,saman_rada,brana:integer;
+kosta_cadras,saman_rada,brana,fail,trapas,zasah:integer;
 pokr:real;
 jmeno,odpoved1,odpoved2,jmeno_tazani:string[30];
-zmlacen:boolean;
+zmlacen,vyhra,prohra:boolean;
 BEGIN
 randomize;
 
@@ -29,14 +29,19 @@ zbran:=4;
 zbroj:=2;
 boj:=2;
 
-pokr:=18;
+pokr:=0;
 
 
 {Inicializace hodnot}
 odpoved1:='Bammm';
 lup_b:=250;
 zmlacen:=false;
+vyhra:=false;
+prohra:=false;
 zlato:=150;  //NORMALNE 50 ZLATYCH
+fail:=0;
+trapas:=0;
+zasah:=0;
 
 
 textcolor(10+blink);
@@ -66,7 +71,6 @@ if pokr=0 then
   writeln('2-Zeptat se kolejdoucich na princeznu Jasminu');
   writeln('3-Navstivit obchodnika');
   writeln('4-Navstivit hospodu');
-  writeln('5-Jit k vezi');      //cheat
   readln(a);
   writeln;
   case a of
@@ -152,7 +156,6 @@ if pokr=0 then
           writeln('Vstoupil jsi do hospody');
           pokr:=20;
     end;
-  5:pokr:=7;       //cheat
   else writeln('Chyba');
   end;
  until (pokr=1) or (pokr=20) or (pokr=7);
@@ -1521,23 +1524,212 @@ if pokr=27 then
                       textcolor(14);
                       writeln('Parek otevira souboj svym ohnivym dechem!');
                       textcolor(11);
+                      if zbroj < 2 then
+                        writeln('Zadej akci (1)')
+                      else
+                        writeln('Zadej akci (1-2)');
+                      textcolor(15);
+                      writeln('1-Uskocit za masivni kamenny pilir');
+                      if zbroj = 2 then
+                        writeln('2-Absorbovat ohen magickou zbroji');
+                      readln(a);
+                      writeln;writeln;
+                      textcolor(14);
+                      case a of
+                      1: begin
+                        writeln('Utoku ses vyhnul, ale Parka jsi ztratil z dohledu a nekam ti zmizel');
+                        fail := fail + 1;
+                        pokr := 28;
+                      end;
+                      2: begin
+                        repeat
+                          writeln;writeln;
+                          textcolor(14);
+                          writeln('Zbroj absorbovala ohen a ty se vrhas do protiutoku!');
+                          textcolor(11);
+                          writeln('Zadej akci (1-2)');
+                          textcolor(15);
+                          writeln('1-Pouzit obratku o 360 stupnu a zautocit na trup');
+                          writeln('2-Vyuzit sve momentum a dostat se drakovi za zada a tam zasadit uder');
+                          readln(a);
+                          textcolor(14);
+                          writeln;writeln;
+                          case a of
+                          1: begin
+                            writeln('Ou, to bylo naivni! Parek te odhodil a nez ses zvedl, byl fuc.');
+                            trapas := trapas + 1;
+                            pokr := 28;
+                          end;
+                          2: begin
+                            writeln('Parek nestacil zareagovat a nez se nadal, mel poskozene kridlo. Ovsem behem oslavovani uspesneho uderu se ti Parek nekam ztratil.');
+                            zasah := zasah + 1;
+                            pokr := 28;
+                          end;
+                          else writeln('chyba');
+                          end;
+                        until pokr = 28;
+                      end;
+                      else writeln('chyba');
+                      end;
+                   until pokr=28;
+              end;
+
+// Bitka s Parkem 2 cast
+if pokr=28 then
+              begin
+                   repeat
+                      writeln;writeln;
+                      textcolor(14);
+                      writeln('Pri hledani Parka mas na vyber ze dvou chodeb, kterou si vyberes?');
+                      textcolor(11);
                       writeln('Zadej akci (1-2)');
                       textcolor(15);
-                      writeln('1-Dost reci, delas mi chute na jidlo! Jdeme bojovat!');
-                      writeln('2-Hodit po Parkovi jeho oblibeny kecup a utect');
+                      writeln('1-Vydat se po schodisti nahoru');
+                      writeln('2-Sklepeni jsou ta spravna volba');
+                      readln(a);
+                      writeln;writeln;
+                      textcolor(14);
+                      case a of
+                      1: begin
+                        repeat
+                          writeln('Dosel jsi na mensi balkon a v mistnosti pod tebou je nic netusici Parek.');
+                          textcolor(11);
+                          writeln('Zadej akci (1-2)');
+                          textcolor(15);
+                          writeln('1-Hodit drakovi na hlavu velky balvan pripraveny hned vedle tebe');
+                          writeln('2-Skocit drakovi na zada a zasahnout kridlo');
+                          readln(a);
+                          writeln;writeln;
+                          textcolor(14);
+                          case a of
+                          1: begin
+                            writeln('Velky balvan si stezi uzvedl, a tak neni divu, ze jsi pri hodu minul a misto hlavy trefil drakovo kridlo. Drak se stahl.');
+                            zasah := zasah + 1;
+                            pokr := 29;
+                          end;
+                          2: begin
+                            writeln('Ups...Parek jen predstiral, ze o tobe nevi a mrstne se ti vyhnul. Jak si tak odpocivas na zemi, drak opet nekam zmizel.');
+                            trapas := trapas + 1;
+                            pokr := 29;
+                          end;
+                          else writeln('chyba');
+                          end;
+                        until pokr = 29;
+                      end;
+                      2: begin
+                        repeat
+                          writeln('Sebevedome kracis sklepenim, kdyz v tom se za tebou ozve rev.');
+                          textcolor(11);
+                          writeln('Zadej akci (1-2)');
+                          textcolor(15);
+                          writeln('1-Jit zjistit, co se stalo');
+                          writeln('2-Tohle neni vhodne bojiste, jit dal');
+                          readln(a);
+                          writeln;writeln;
+                          textcolor(14);
+                          case a of
+                          1: begin
+                            writeln('Jakmile jsi dosel k mistu hluku, vidis, ze se pod drakem proboril kus podlahy. Vyuzivas situace a vrazis drakovi kopi do jeho nechranene zadnice.');
+                            zasah := zasah + 1;
+                            pokr := 29;
+                          end;
+                          2: begin
+                            writeln('Podle pokracujiciho hluku za tebou to vypada, ze se pod drakem proboril kus podlahy a ty jsi tak prisel o moznost uderit.');
+                            fail := fail + 1;
+                            pokr := 29;
+                          end;
+                          else writeln('chyba');
+                          end;
+                        until pokr = 29;
+                      end;
+                      else writeln('chyba');
+                      end;
+                   until pokr = 29;
+              end;      
+
+// Bitka s Parkem 3 cast
+if pokr=29 then
+              begin
+                   repeat
+                      writeln;writeln;
+                      textcolor(14);
+                      writeln('Pokracujes v pronasledovani Parka, ten se ovsem najednou rozhodl prestat utikat, otocil se a obdaril te zakernym usklebkem. Pote proti tobe vyrazi, davajic ti minimu casu zareagovat.');
+                      textcolor(11);
+                      writeln('Zadej akci (1-3)');
+                      textcolor(15);
+                      writeln('1-Zkusit vyuzit drakovy rychlosti');
+                      writeln('2-Rozbehnout se proti Parkovi');
+                      writeln('3-Pripravit si mec k uderu');
                       readln(a);
                       writeln;
                       case a of
                       1: begin
-                          writeln('Jak je libo! *SLINT*');
-                          pokr:= 27;
+                        writeln('Jak se k tobe Parek blizi, pripravujes se na uskok na posledni chvili... ovsem skarede ses prepocital a Parek te smetl.');
+                        trapas := trapas + 1;
+                        pokr:= 30;
                       end;
-                      2: writeln('zdar');
+                      2: begin
+                        writeln('Tvuj protiutok Parka mirne vyvedl z koncentrace, cehoz vyuzivas a svym mocnym mecem draka zranujes na brise.');
+                        zasah := zasah + 1;
+                        pokr:= 30;
+                      end;
+                      3: begin
+                        writeln('Jakmile Parek spatril mocny Crush-pack pripraveny uderit, rychle zmenil nazor a primo pred tebou probehl zdi.');
+                        fail := fail + 1;
+                        pokr:= 30;
+                      end;
                       else writeln('chyba');
                       end;
-                   until pokr=18;
+                   until pokr=30;
               end;
 
-UNTIL F=1;
+// Bitka s Parkem - zaver
+if pokr=30 then
+              begin
+                   repeat
+                      writeln;writeln;
+                      textcolor(14);
+                      if zasah = 3 then begin
+                        writeln('Pronasledujes Parka az na vrchol hradni veze a vidis, ze Parek uz neni schopen boje. Vitezoslavne k nemu pristupujes a zasazujes smrtelny uder!');
+                        vyhra := true;
+                      end;
+                      if zasah = 2 then begin
+                        writeln('Pronasledujes Parka az na vrchol hradni veze, pripraveneho na zaverecne klani.');
+                        textcolor(11);
+                        writeln('Zadej akci (1)');
+                        textcolor(15);
+                        writeln('1-Pouzit na draka quagmire');
+                        readln(a);
+                        writeln;
+                        case a of
+                        1: begin
+                            writeln('Hazis pod Parka quagmire, cimz jsi mu naprosto znemoznil pohybu. Nyni jiz bezbranneho Parka dorazis Crush-pakem!');
+                            vyhra := true;
+                        end;
+                        else writeln('chyba');
+                        end;
+                      end;
+                      if fail >= 2 then begin
+                        write('Pronasledujes Parka az na vrchol hradni veze. Ale cestou jsi narazil na sve pratele Cadrase, Kaspeca a Wintyho.');
+                        write(' Cadras ti moudre pravi: "Sledovali jsme bitvu se svym znamym samanem Zha-pekem a rikali jsme si, ze ti to trva nejak moc dlouho, tak jsme prisli Parka vyridit sami."'); 
+                        writeln(' Pote se vsichni na draka vrhnou a spolecne ho udolaji. Ovsem, jelikoz to jsou strasne svine, Kaspec a Winty podlehnou svym zranenim a tak slavis vitezstvi jen s Cadrasem. "Stejne to byli hajdalaci." Pravi Cadras nakonec.');
+                        vyhra := true;
+                      end;
+                      if trapas = 2 then begin
+                        writeln('Pronasledujes Parka az na vrchol hradni veze, pripraveneho na zaverecne klani. Ovsem diky svym cetnym zranenim nejsi pro Parka zdatnym souperem a v bitve podlehas svym zranenim.');
+                        prohra := true;
+                      end;
+                      if trapas = 2 then begin
+                        writeln('Pronasledujes Parka az na vrchol hradni veze. Jakmile te Parek spatril, okamzite proti tobe pouzil svuj ohnivy dech!');
+                        if zbroj = 3 then
+                          writeln('Dech jsi vykryl svou fire-enchanted zbroji, coz te ovsem na dlouho nezachranilo, protoze vzapeti ti Parek ukousl hlavu!')
+                        else
+                          writeln('Jelikoz jsi jiz vypotreboval silu sve zbroje, jsi na prach!');
+                        prohra := true;
+                        end;
+                   until vyhra or prohra;
+              end;
+
+UNTIL vyhra or prohra;
 readln;
 END.

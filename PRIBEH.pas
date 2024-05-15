@@ -14,20 +14,20 @@ BEGIN
 randomize;
 
 {Cheaty}
-kaspec:=1;
-pochoden:=1;
-balada:=1;
-struny:=1;
-slysel:=1;
-poslano_pro_struny:=1;
+kaspec:=0;
+pochoden:=0;
+balada:=0;
+struny:=0;
+slysel:=0;
+poslano_pro_struny:=0;
 talisman:=0;
-prozkoumana_vez:=1;
-rada_od_wintyho:=1;
+prozkoumana_vez:=0;
+rada_od_wintyho:=0;
 saman_rada:=0;
 
-zbran:=4;
-zbroj:=2;
-boj:=2;
+zbran:=0;
+zbroj:=0;
+boj:=0;
 
 pokr:=0;
 
@@ -38,7 +38,7 @@ lup_b:=250;
 zmlacen:=false;
 vyhra:=false;
 prohra:=false;
-zlato:=150;  //NORMALNE 50 ZLATYCH
+zlato:=50;  //NORMALNE 50 ZLATYCH
 fail:=0;
 trapas:=0;
 zasah:=0;
@@ -350,7 +350,7 @@ if pokr=6 then
                          writeln('Zadej akci (1-3)');
                          textcolor(15);
                          writeln('1-Porozhlidnout se po nejake praci');
-                         writeln('2-Naucit se u cvicitele bojovemu umeni (50 zlatych)');
+                         writeln('2-Naucit se u cvicitele bojovemu umeni (100 zlatych)');
                          writeln('3-Vratit se k lesni krizovatce');
                          readln(a);
                          writeln;
@@ -373,8 +373,8 @@ if pokr=6 then
                                 else writeln('chyba');
                                 end;
                            end;
-                         2:begin if (zlato<50) or (boj=1) then begin textcolor(14); writeln('Nemas dostatek penez nebo uz danou dovednost mas naucenou!');end;
-                                 if (zlato>=50) and (boj=0) then begin textcolor(14); writeln('Naucil jsi se zachazet se zbrani');zlato:=zlato-100;boj:=1;writeln('Mas ',zlato,' zlata'); end;
+                         2:begin if (zlato<100) or (boj=1) then begin textcolor(14); writeln('Nemas dostatek penez nebo uz danou dovednost mas naucenou!');end;
+                                 if (zlato>=100) and (boj=0) then begin textcolor(14); writeln('Naucil jsi se zachazet se zbrani');zlato:=zlato-100;boj:=1;writeln('Mas ',zlato,' zlata'); end;
                            end;
                          3:begin textcolor(14); writeln('Dosel jsi k lesni krizovatce'); pokr:=3; end;
                          else writeln('chyba');

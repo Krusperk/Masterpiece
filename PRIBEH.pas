@@ -1105,6 +1105,7 @@ if pokr=21 then begin
                                                                        textcolor(10); writeln('Tak jsem dosel az k Cadrasove vezi, ale nepovedlo se mi dostat se dovnitr, mas s tim nejake zkusenosti?');
                                                                        writeln;
                                                                        textcolor(14); writeln('No jo, uplne jsem na to zapomnel, aby te vez pustila, musis pekne poprosit a vedet, za kym jdes. Ten starej paprda je moc vysazenej na dobre mravy.');
+                                                                       rada_od_wintyho := 1;
                                                                      end;
 
                         end;

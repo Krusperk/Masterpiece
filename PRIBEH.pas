@@ -36,7 +36,7 @@ pokr:=24;
 }
 
 {Inicializace hodnot}
-odpoved1:='Bammm';
+odpoved1:='40 a 30';
 lup_b:=250;
 zmlacen:=false;
 vyhra:=false;
@@ -59,7 +59,7 @@ writeln('PRIBEH:');
 textcolor(15);
 writeln;
 textcolor(14);
-writeln('Jako kovaruv syn ',jmeno,', se vydavas do sveta osvobodit princeznu Jasminu ze sparu draka. Rozloucil ses s otcem a jsi ve meste Segard na namesti, kde tvuj pribeh zacina. Mas ',zlato,' zlataku. Hodne stesti!');
+writeln('Jako kovaruv syn, ',jmeno,', se vydavas do sveta osvobodit princeznu Jasminu ze sparu draka. Rozloucil ses s otcem a jsi ve meste Segard na namesti, kde tvuj pribeh zacina. Mas ',zlato,' zlataku. Hodne stesti!');
 
 REPEAT
 // Pocatecni mesto
@@ -71,7 +71,7 @@ if pokr=0 then
   writeln('Zadej akci (1-3)');
   textcolor(15);
   writeln('1-Dat se na cestu');
-  writeln('2-Zeptat se kolejdoucich na princeznu Jasminu');
+  writeln('2-Zeptat se kolemjdoucich na princeznu Jasminu');
   writeln('3-Navstivit obchodnika');
   writeln('4-Navstivit hospodu');
   readln(a);
@@ -88,7 +88,7 @@ if pokr=0 then
        pokr:=30;
        writeln;writeln;
        textcolor(14);
-       writeln('Zadej, co chces koupit nebo zda radeji tento kram opustit');
+       writeln('Zadej, co chces koupit, nebo zda radeji tento kram opustit');
        writeln;
        textcolor(11);
        writeln('Zadej akci (1-3)');
@@ -115,10 +115,10 @@ if pokr=0 then
              readln(a);
              writeln;
              case a of
-             1:begin if zbran>=2 then begin textcolor(12); writeln('Tuto zbran uz mas nebo vlastnis uz lepsi zbran'); end
+             1:begin if zbran>=2 then begin textcolor(12); writeln('Tuto zbran uz mas nebo uz vlastnis lepsi zbran'); end
                                  else if zlato>=200 then begin textcolor(14); writeln('Koupil jsi mec Bandituv postrach!');   zlato:=zlato-200; zbran:=2; end else begin textcolor(14); writeln('Mas malo penez!');end;end;
-             2:begin if zbran>=3 then begin textcolor(12); writeln('Tuto zbran uz mas nebo vlastnis uz lepsi zbran'); end
-                                 else if zlato>=400 then begin textcolor(14); writeln('Koupil jsi  sekeru Trolo-kosic!'); zlato:=zlato-400; zbran:=3; end else begin textcolor(14); writeln('Mas malo penez!');end;end;
+             2:begin if zbran>=3 then begin textcolor(12); writeln('Tuto zbran uz mas nebo uz vlastnis lepsi zbran'); end
+                                 else if zlato>=400 then begin textcolor(14); writeln('Koupil jsi sekeru Trolo-kosic!'); zlato:=zlato-400; zbran:=3; end else begin textcolor(14); writeln('Mas malo penez!');end;end;
              3:pokr:=31;
              else writeln('chyba');
              end;
@@ -204,7 +204,7 @@ if pokr=2 then begin
                    writeln;
                    case a of
                    1:begin
-                          if zmlacen=false then begin textcolor(14); writeln('Mam se dobre, dekuji. Za to ze jsi tak zdvorily, tak ti dam malou radu. O kousek dal na lesni krizovatce se nedavej na vychod, je tam trol ktery brani v ceste');end;
+                          if zmlacen=false then begin textcolor(14); writeln('Mam se dobre, dekuji. Za to, ze jsi tak zdvorily, tak ti dam malou radu. O kousek dal na lesni krizovatce se nedavej na vychod, je tam trol ktery brani v ceste');end;
                           if zmlacen=true  then begin textcolor(14); writeln('No, nemam se zrovna moc dobre kdyz me nakej darebak zmlatil, ze?');end;
                      end;
                    2:
@@ -287,7 +287,7 @@ if pokr=4 then
                        end;
                      2:begin textcolor(14); writeln('Dosel jsi na lesni krizovatku');pokr:=3; end;
                      3:begin if (poslano_pro_struny=1) and (struny=0) then begin
-                                                                              textcolor(14); writeln('Pri hledani brasny se stunami jsi s narazil na vlci doupe, pred kterem stoji maly vlk, ktery nevypada moc privetive');
+                                                                              textcolor(14); writeln('Pri hledani brasny se stunami jsi narazil na vlci doupe, pred kterym stoji maly vlk, ktery nevypada moc privetive');
                                                                               writeln;writeln;
                                                                               textcolor(11);
                                                                               writeln('Zadej akci (1-2)');
@@ -298,7 +298,7 @@ if pokr=4 then
                                                                               writeln;
                                                                               case a of
                                                                               1:begin if zbran>=1 then begin
-                                                                                                         textcolor(14); writeln('Rozbehl jsi se na maleho vlka. Vlk videl ze v rukou svijis nejakou zbran, tak se dal radeji k uteku');
+                                                                                                         textcolor(14); writeln('Rozbehl jsi se na maleho vlka. Vlk videl ze v rukou trimas nejakou zbran, tak se dal radeji k uteku');
                                                                                                          writeln;
                                                                                                          writeln('Po zahnani vlka jsi se podival po brasne i do jeho skryse a ta mrska ji tam opravdu mela :-)');
                                                                                                          struny:=1;
@@ -339,7 +339,7 @@ if pokr=5 then
                                  if pochoden=1 then begin textcolor(14); writeln('V jeskyni jsi narazil na 1. rozbocku');pokr:=9; end;
                            end;
                          3:begin textcolor(14); writeln('Dosel jsi k lesni krizovatce'); pokr:=3; end;
-                         else writeln('chyb');
+                         else writeln('chyba');
                          end;
                    until (pokr=8) or (pokr=9) or (pokr=3);
               end;
@@ -439,11 +439,11 @@ if (pokr=8) and (zub=0) and (lup_b>0) then
                    case a of
                    1:begin
                        if karma=0 then begin textcolor(14); writeln('Utekl jsi banditum k jeskyni');pokr:=5; end;
-                       if karma=1 then begin textcolor(14); writeln('Nedok�zal jsi ut�ct bandit�m. Banditi te zmlatilia okradli, jsi ve mseste Segard');pokr:=0;lup_b:=lup_b+zlato;zlato:=0; end;
+                       if karma=1 then begin textcolor(14); writeln('Nedokazal jsi utect banditum. Banditi te zmlatili a okradli, jsi ve meste Segard');pokr:=0;lup_b:=lup_b+zlato;zlato:=0; end;
                      end;
                    2:begin
                        if (zbran>1) and (boj>0) then begin textcolor(14); writeln('Zmlatil jsi bandity a oloupil jsi je o ',lup_b,' zlata a mas ',zlato+lup_b,' zlata');zlato:=zlato+lup_b;lup_b:=0 end
-                                                else begin textcolor(14); writeln('Prohral jsi souboj s bandity, zmlatili te a okradli, jsi ve meste Segard');pokr:=0;lup_b:=lup_b+zlato;zlato:=0; end;
+                                                else begin textcolor(14); writeln('Prohral jsi souboj s bandity, a ti te zmlatili a okradli, jsi ve meste Segard');pokr:=0;lup_b:=lup_b+zlato;zlato:=0; end;
                      end;
                    3:if zlato>=300 then begin textcolor(14); writeln('Banditi te nechali za drobny uplatek projit dal, dosel jsi k Cadrasove vezi');zlato:=zlato-300;pokr:=16;end
                                    else begin textcolor(14); writeln('Nemas tolik penez. Banditi te zmlatili a okradli o zbytek zlata');pokr:=0;lup_b:=lup_b+zlato;zlato:=0;end;
@@ -492,7 +492,7 @@ if (pokr=8) and (zub=1) then
                                        1:begin textcolor(14); writeln('Dosel jsi k podivne vezi, ale nikde nevidis zadny vchod');pokr:=7; end;
                                        2:begin textcolor(14); writeln('Dosel jsi k jeskyni');pokr:=5; end;
                                        3:begin textcolor(14); zlato:=zlato+lup_b; writeln('Posrani banditi se ani nevzepreli na odpor a nez se nadeli, byli zmlaceni a okradnuti o ',lup_b,' zlata a mas ',zlato,' zlata');lup_b:=0; end;
-                                       4:begin textcolor(14); writeln('Takovyho trola jsem skolil raz-dva, s par banditama bych nemel nejmensi problem. Jen nas nebi, PROSIM!'); end;
+                                       4:begin textcolor(14); writeln('Takovyho trola jsem skolil raz-dva, s par banditama bych nemel nejmensi problem. Jen nas nebij, PROSIM!'); end;
                                        else writeln('chyba');
                                        end;
                                  until (pokr=5) or (pokr=7);
@@ -556,7 +556,7 @@ if pokr=11 then
                            readln(a);
                            writeln;
                            case a of
-                           1:begin textcolor(14); writeln('Dosel jsi k uchvatne Sfinze, na ktere je napsana otazka: ');pokr:=13; end;
+                           1:begin textcolor(14); writeln('Dosel jsi k uchvatne Sfinze, na ktere je napsana otazka: Princezna je tak stara, jako bude princi v dobe, kdy princezne bude dvakrat tolik, kolik bylo princi, kdyz vek princezny byla polovina souctu jejich veku. Jaky je jejich vek?');pokr:=13; end;
                            2:begin textcolor(14); writeln('Dosel jsi k propasti');pokr:=12; end;
                            3:begin textcolor(14); writeln('Dostal jsi se k prvni rozbocce');pokr:=9 end;
                            else writeln('chyba');
@@ -577,7 +577,7 @@ if pokr=12 then
                           readln(a);
                           writeln;
                           case a of
-                          1:begin textcolor(14); writeln('Tak takovou propast bys se pokousel preskocit jen debil. Samosdrejme ze jsi spadl dolu a slusne ses polamal. Jsi ve meste Segard.'); pokr:=0; end;
+                          1:begin textcolor(14); writeln('Tak takovou propast by se pokousel preskocit jen debil. Samozrejme ze jsi spadl dolu a slusne ses polamal. Jsi ve meste Segard.'); pokr:=0; end;
                           2:begin textcolor(14); writeln('Vratil jsi se ke druhe rozbocce');pokr:=11; end;
                           else writeln('chyba');
                           end;
@@ -637,7 +637,7 @@ if pokr=14 then
                                                    pokecano_kaspec:=1;
                                                    textcolor(10); writeln('Nejsi nahodou Kaspec, mocny assassin, o kterem mi vypravel Winty?');writeln;
                                                    textcolor(14); writeln('To teda nahodou jsem, co potrebujes prcku?');writeln;
-                                                   textcolor(10); writeln('Slysel jsem, ze mas velke zkusenosti s draky, nemohl bys mi  dat nejake rady? Chystam se osvobodit princeznu Jasminu a docela rad bych to prezil.');writeln;
+                                                   textcolor(10); writeln('Slysel jsem, ze mas velke zkusenosti s draky, nemohl bys mi dat nejake rady? Chystam se osvobodit princeznu Jasminu a docela rad bych to prezil.');writeln;
                                                    textcolor(14); write('Ty, takovy nezkuseny capart, chces bojovat s drakem?! To jsi me opravdu rozesmal. Aby jsi porazil draka, musis se toho jeste hodne naucit.');
                                                                   write(' Draci jsou mazani a rozhodne nepodceni zadneho protivnika, za kazdou cenu se budou snazit boj oddalit, aby zjistili tve slabiny.');
                                                                   write(' Ale nez ti povim vic, musim si otestovat, jestli na to mas. Kousek odtud je pro jednoho neprekonatelna propast, ale ve dvou bychom ji mohli prekonat.');
@@ -723,9 +723,9 @@ if pokr=14 then
                                   readln(a);
                                   writeln;
                                   case a of
-                                  1:begin textcolor(14); zlato:=zlato+0; writeln('Dobre, dobre, tady mas 40%. Libi se mi tva kuraz. (Obdrzel jsi xx zlata a mas ',zlato,' zlata). A ted se ptej.'); end;
-                                  2:begin textcolor(14); zlato:=zlato+0; writeln('Hele mladej, si nejak moc veris, ale za tvou kuras ti dam 40%. (Obdrzel jsi xx zlata a mas ',zlato,' zlata). A ted se ptej.'); end;
-                                  3:begin textcolor(14); zlato:=zlato+0; writeln('Cekal jsem, ze budes mit vetsi kuraz a pokusis se smlouvat. S takovym sebevedomim na draka ani nechod. (Obdrzel jsi xx zlata a mas ',zlato,' zlata). Radeji uz se ptej.'); end;
+                                  1:begin textcolor(14); zlato:=zlato+0; writeln('Dobre, dobre, tady mas 40%. Libi se mi tva kuraz. (Obdrzel jsi 500 zlata a mas ',zlato,' zlata). A ted se ptej.'); end;
+                                  2:begin textcolor(14); zlato:=zlato+0; writeln('Hele mladej, si nejak moc veris, ale za tvou kuras ti dam 40%. (Obdrzel jsi 500 zlata a mas ',zlato,' zlata). A ted se ptej.'); end;
+                                  3:begin textcolor(14); zlato:=zlato+0; writeln('Cekal jsem, ze budes mit vetsi kuraz a pokusis se smlouvat. S takovym sebevedomim na draka ani nechod. (Obdrzel jsi 350 zlata a mas ',zlato,' zlata). Radeji uz se ptej.'); end;
                                   else writeln('chyba');
                                   end;
                             end;
@@ -791,9 +791,9 @@ if pokr=16 then
                             end;
                           3:begin textcolor(14); writeln('Proc me vyrusujes pri praci? Vrat se az se naucis chovat!');pokr:=random(9);writeln;
                             if pokr=0 then writeln('Objevil jsi se ve meste');
-                            if pokr=1 then writeln('Objevil jsi se u jez�rka');
+                            if pokr=1 then writeln('Objevil jsi se u jezirka');
                             if pokr=2 then writeln('Objevil jsi se u kolemjdouciho');
-                            if pokr=3 then writeln('Objevil jsi se na krozivatce');
+                            if pokr=3 then writeln('Objevil jsi se na krizovatce');
                             if pokr=4 then writeln('Objevil jsi se u trola');
                             if pokr=5 then writeln('Objevil jsi se u jeskyne');
                             if pokr=6 then writeln('Objevil jsi se na farme');
@@ -818,9 +818,9 @@ if pokr=16 then
                                                                                           else begin
                                                                                                  writeln('Neco mi rika, ze ke me nejsi uprimny. Vrat se, az nabydes vice uprimnosti');
                                                                                                  if pokr=0 then writeln('Objevil jsi se ve meste');
-                                                                                                 if pokr=1 then writeln('Objevil jsi se u jez�rka');
+                                                                                                 if pokr=1 then writeln('Objevil jsi se u jezirka');
                                                                                                  if pokr=2 then writeln('Objevil jsi se u kolemjdouciho');
-                                                                                                 if pokr=3 then writeln('Objevil jsi se na krozivatce');
+                                                                                                 if pokr=3 then writeln('Objevil jsi se na krizovatce');
                                                                                                  if pokr=4 then writeln('Objevil jsi se u trola');
                                                                                                  if pokr=5 then writeln('Objevil jsi se u jeskyne');
                                                                                                  if pokr=6 then writeln('Objevil jsi se na farme');
@@ -858,7 +858,7 @@ if pokr=17 then
                                 pokr:=30;
                                 writeln;writeln;
                                 textcolor(14);
-                                writeln('Zadej, co chces koupit nebo zda radeji tento kram opustit');
+                                writeln('Zadej, co chces koupit, nebo zda radeji tento kram opustit');
                                 writeln;
                                 textcolor(11);
                                 writeln('Zadej akci (1-2)');
@@ -885,7 +885,7 @@ if pokr=17 then
                                       1:begin
                                          if zbroj<2 then
                                                       begin
-                                                        textcolor(14); writeln('Takze ty by jsi mel zajem o tuto magickou zbroj? Bouzel tech par zlatacku, ktere mas, ti vubec nestaci. Ale kdyby jsi mel pro me neco cenneho, tak bychom se mohli domluvit');
+                                                        textcolor(14); writeln('Takze ty bys mel zajem o tuto magickou zbroj? Bouzel tech par zlatacku, ktere mas, ti vubec nestaci. Ale kdyby jsi mel pro me neco cenneho, tak bychom se mohli domluvit');
                                                         writeln; writeln('To, co mas na krku, je troli zub??!! Moc pekny kousek Za ten zub ti tu zbroj dam, plati?');
                                                         repeat
                                                           writeln;writeln;
@@ -972,7 +972,7 @@ if pokr=19 then
                           writeln('3-Je nejaka sance, ze bych se mohl stat tvym ucednikem?');
                           writeln('4-Povida se, ze jste s Kaspecem skolili draka, nemel bys pro me nejakou radu?');
                           writeln('5-Dekuji ti za vse, moc jsi mi pomohl. Teleportoval by jsi me prosim zpet z veze?');
-                          if (talisman=0) and (sfinga_objevena=1) then writeln('6-V nedaleke jeskyni jsem naleznul sfingu, potreboval bych pomoct s jeji hadankou. Rika se v ni: "Hadanka"');
+                          if (talisman=0) and (sfinga_objevena=1) then writeln('6-V nedaleke jeskyni jsem naleznul sfingu, potreboval bych pomoct s jeji hadankou. Rika se v ni: "Princezna je tak stara, jako bude princi v dobe, kdy princezne bude dvakrat tolik, kolik bylo princi, kdyz vek princezny byla polovina souctu jejich veku. Jaky je jejich vek?"');
                           if (zbroj=2) and (saman_rada=1) then writeln('7-V jednom udoli jsem potkal orkskeho samana, ktery mi rekl, ze se tato zbroj da enchantovat, dokazal bys to?');
                           readln(a);
                           writeln;
@@ -984,7 +984,7 @@ if pokr=19 then
                                   quagmire:=1;
                           end;
                           5:begin textcolor(14); writeln('Neni zac. Preji ti mnoho stesti na tvych cestach.');writeln;writeln;writeln('Objevil jsi se u veze');pokr:=7; end;
-                          6:begin if (talisman=0) and (sfinga_objevena=1) then begin textcolor(14); writeln('Tady mu naprosto genialne poradim'); end
+                          6:begin if (talisman=0) and (sfinga_objevena=1) then begin textcolor(14); writeln('No, reknu to tak, aby to pochopil i ten tvuj opici mozek. Princezna je o tretinu starsi nez princ, a jejich spolecny vek je SEDUM...desat. Ted uz to pro tebe musi byt brnkacka.'); end
                                   else writeln('chyba');
                             end;
                           7:begin if ((zbroj=2) and (saman_rada=1)) then begin
@@ -1243,7 +1243,7 @@ if pokr=24 then begin
                          if boj=2 then
                                     begin
                                       textcolor(14);
-                                      writeln('Pomoci kaspecovske finty jsi se dostal do hradu a otevrel branu zevnitr pro pripadny uteku. Vztupujes do hradni haly');
+                                      writeln('Pomoci kaspecovske finty jsi se dostal do hradu a otevrel branu zevnitr pro pripadny uteku. Vstupujes do hradni haly');
                                       brana:=1;
                                       pokr:=26;
                                     end
@@ -1277,9 +1277,9 @@ if pokr=25 then begin
                          if zbran<4
                            then
                            begin
-                            textcolor(14); writeln('Chvili bylo absolutni ticho a najednou se zem zatrasla. Uprostred krypty se zjevil desivy kostlivec drzejic zarici mec.');
+                            textcolor(14); writeln('Chvili bylo absolutni ticho a najednou se zem zatrasla. Uprostred krypty se zjevil desivy kostlivec drzici zarici mec.');
                             writeln;
-                            writeln('Hrubym hlasem promluvil: Jdes si pro tento mec, vid? Smrtelnice. Dam ti ho, ale nejdriv musim zjistit jake jsou tve umysly s nim nalozit, proto se te zeptam na par otazek.');
+                            writeln('Hrubym hlasem promluvil: Jdes si pro tento mec, vid smrtelnice? Dam ti ho, ale nejdriv musim zjistit jake jsou tve umysly s nim nalozit, proto se te zeptam na par otazek.');
                                writeln;writeln;
                                textcolor(11);
                                writeln('Zadej akci (1-2)');
@@ -1399,14 +1399,14 @@ if pokr=25 then begin
                                                                                   end;
                                                                                 3:begin
                                                                                     textcolor(14);
-                                                                                    writeln('Oo moudry cadras, urcite te vyzbrojil nejen quagmirem, ale i dalsimy uzitecnymi radami. Neco dalsiho?');
+                                                                                    writeln('Oo moudry Cadras, urcite te vyzbrojil nejen quagmirem, ale i dalsimy uzitecnymi radami. Neco dalsiho?');
                                                                                     kosta_cadras:=1;
                                                                                   end;
                                                                                 4:begin
                                                                                     textcolor(14);
                                                                                     if ((kosta_winty=1) and (kosta_kaspec=1) and (kosta_cadras=1))
                                                                                       then begin
-                                                                                              writeln('Vypada to, ze mas vsechny predpoklady draka porazit. Davam ti tedy mocny Crush-Pack, necht prezijes dele nez jeho predchozi majitel, ktereho rozsapaly veverky.');
+                                                                                              writeln('Vypada to, ze mas vsechny predpoklady draka porazit. Davam ti tedy mocny Crush-Pack. Necht prezijes dele nez jeho predchozi majitel, ktereho rozsapaly veverky.');
                                                                                               zbran:=4;
                                                                                            end
                                                                                       else writeln('To mi bouzel nestaci. Budes si muset projit mym vyslechem znovu');
@@ -1437,19 +1437,19 @@ if pokr=25 then begin
                                                                  end;
                                                                2:begin
                                                                     textcolor(14);
-                                                                    writeln('To bys prece nechtel bojovat s drakem, kdyz jsi bojoval jen s nejakymi psy. Vrat se pozdeji.');
+                                                                    writeln('Prece bys nechtel bojovat s drakem, kdyz jsi bojoval jen s nejakymi psy. Vrat se pozdeji.');
                                                                     writeln;writeln;
                                                                     writeln('Kostlivec te teleportoval k orkskemu samanovi');
                                                                     pokr:=23
                                                                  end;
 
-                                                               else writeln('cyba');
+                                                               else writeln('chyba');
                                                                end;
 
                                                             end;
                                                           2:begin
                                                                textcolor(14);
-                                                               writeln('A to by jsi chtel s takovym drakem bojovat, kdyz umis jen trhat turiny? By jsi Parkovi tak maximalne mohl vytrhat chlupy na zadku a ne s nim bojovat. Vrat se, az neco dokazes');
+                                                               writeln('A to bys chtel s takovym drakem bojovat, kdyz umis jen trhat turiny? Bys Parkovi tak maximalne mohl vytrhat chlupy na zadku a ne s nim bojovat. Vrat se, az neco dokazes');
                                                                writeln;writeln;
                                                                writeln('Kostlivec te teleportoval k orkskemu samanovi');
                                                                pokr:=23
@@ -1500,7 +1500,7 @@ if pokr=26 then
                    repeat
                       writeln;
                       textcolor(14);
-                      writeln('Ah! Vecere prisla! Mas s sebou i kecup? Ah! Ale to nevadi, ve me lednici se nejaky najde.');
+                      writeln('Ah! Vecere prisla! Mas s sebou i kecup? Ah! Ale to nevadi, v me lednici se nejaky najde.');
                       writeln;
                       writeln;
                       textcolor(11);
@@ -1592,7 +1592,7 @@ if pokr=28 then
                    repeat
                       writeln;
                       textcolor(14);
-                      writeln('Pri hledani Parka mas na vyber ze dvou chodeb, kterou si vyberes?');
+                      writeln('Pri hledani Parka mas na vyber ze dvou chodeb. Kterou si vyberes?');
                       writeln;
                       writeln;
                       textcolor(11);
@@ -1668,7 +1668,7 @@ if pokr=29 then
                    repeat
                       writeln;
                       textcolor(14);
-                      writeln('Pokracujes v pronasledovani Parka, ten se ovsem najednou rozhodl prestat utikat, otocil se a obdaril te zakernym usklebkem. Pote proti tobe vyrazi, davajic ti minimu casu zareagovat.');
+                      writeln('Pokracujes v pronasledovani Parka, ten se ovsem najednou rozhodl prestat utikat, otocil se a obdaril te zakernym usklebkem. Pote proti tobe vyrazi, davajic ti minimum casu zareagovat.');
                       writeln;
                       writeln;
                       textcolor(11);
@@ -1710,14 +1710,14 @@ if pokr=30 then
                       vyhra := true;
                     end;
                     if (zasah = 2) and (quagmire = 1) then begin
-                      write('Pronasledujes Parka az na vrchol hradni veze, pripraveneho na zaverecne klani. Vzpomnel sis, že si dostal od Cardase nejake kouzlo. ');
+                      write('Pronasledujes Parka az na vrchol hradni veze, kde stoji pripraveny na zaverecne klani. Vzpomnel sis, žes dostal od Cadrase nejake kouzlo. ');
                       writeln('Hazis pod Parka quagmire, cimz jsi mu naprosto znemoznil pohybu. Nyni jiz bezbranneho Parka dorazis Crush-pakem!');
                       vyhra := true;
                     end;
                     if fail >= 2 then begin
                       write('Pronasledujes Parka az na vrchol hradni veze. Ale cestou jsi narazil na sve pratele Cadrase, Kaspeca a Wintyho.');
                       write(' Cadras ti moudre pravi: "Sledovali jsme bitvu se svym znamym samanem Zha-pekem a rikali jsme si, ze ti to trva nejak moc dlouho, tak jsme prisli Parka vyridit sami."'); 
-                      writeln(' Pote se vsichni na draka vrhnou a spolecne ho udolaji. Ovsem, jelikoz to jsou strasne svine, Kaspec a Winty podlehnou svym zranenim a tak slavis vitezstvi jen s Cadrasem. "Stejne to byli hajdalaci." Pravi Cadras nakonec.');
+                      writeln(' Pote se vsichni na draka vrhnou a spolecne ho udolaji. Avsak jelikoz ti Cadras dal svuj jediny svitek quagmiru, Kaspec a Winty podlehnou svym zranenim, a tak slavis vitezstvi jen s Cadrasem. "Stejne to byli hajdalaci." Pravi Cadras nakonec.');
                       vyhra := true;
                     end;
                     if trapas = 3 then begin

@@ -556,7 +556,7 @@ if pokr=11 then
                            readln(a);
                            writeln;
                            case a of
-                           1:begin textcolor(14); writeln('Dosel jsi k uchvatne Sfinze, na ktere je napsana otazka: Princezna je tak stara, jako bude princi v dobe, kdy princezne bude dvakrat tolik, kolik bylo princi, kdyz vek princezny byla polovina souctu jejich veku. Jaky je jejich vek?');pokr:=13; end;
+                           1:begin textcolor(14); writeln('Dosel jsi k uchvatne Sfinze, na ktere je napsana otazka: Princezne je tolik let, kolik bude princi v dobe, kdy princezne bude dvakrat tolik, kolik bylo princi, kdyz vek princezny byla polovina souctu jejich veku. Jaky je jejich vek?');pokr:=13; end;
                            2:begin textcolor(14); writeln('Dosel jsi k propasti');pokr:=12; end;
                            3:begin textcolor(14); writeln('Dostal jsi se k prvni rozbocce');pokr:=9 end;
                            else writeln('chyba');
@@ -972,7 +972,8 @@ if pokr=19 then
                           writeln('3-Je nejaka sance, ze bych se mohl stat tvym ucednikem?');
                           writeln('4-Povida se, ze jste s Kaspecem skolili draka, nemel bys pro me nejakou radu?');
                           writeln('5-Dekuji ti za vse, moc jsi mi pomohl. Teleportoval by jsi me prosim zpet z veze?');
-                          if (talisman=0) and (sfinga_objevena=1) then writeln('6-V nedaleke jeskyni jsem naleznul sfingu, potreboval bych pomoct s jeji hadankou. Rika se v ni: "Princezna je tak stara, jako bude princi v dobe, kdy princezne bude dvakrat tolik, kolik bylo princi, kdyz vek princezny byla polovina souctu jejich veku. Jaky je jejich vek?"');
+                          if (talisman=0) and (sfinga_objevena=1) then writeln('6-V nedaleke jeskyni jsem naleznul sfingu, potreboval bych pomoct s jeji hadankou. Rika se v ni:');
+                          writeln('"Princezne je tolik let, kolik bude princi v dobe, kdy princezne bude dvakrat tolik, kolik bylo princi, kdyz vek princezny byla polovina souctu jejich veku. Jaky je jejich vek?"');
                           if (zbroj=2) and (saman_rada=1) then writeln('7-V jednom udoli jsem potkal orkskeho samana, ktery mi rekl, ze se tato zbroj da enchantovat, dokazal bys to?');
                           readln(a);
                           writeln;
@@ -1710,7 +1711,7 @@ if pokr=30 then
                       vyhra := true;
                     end;
                     if (zasah = 2) and (quagmire = 1) then begin
-                      write('Pronasledujes Parka az na vrchol hradni veze, kde stoji pripraveny na zaverecne klani. Vzpomnel sis, žes dostal od Cadrase nejake kouzlo. ');
+                      write('Pronasledujes Parka az na vrchol hradni veze, kde stoji pripraveny na zaverecne klani. Vzpomnel sis, zes dostal od Cadrase nejake kouzlo. ');
                       writeln('Hazis pod Parka quagmire, cimz jsi mu naprosto znemoznil pohybu. Nyni jiz bezbranneho Parka dorazis Crush-pakem!');
                       vyhra := true;
                     end;

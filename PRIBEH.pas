@@ -110,7 +110,7 @@ if pokr=0 then
              writeln('Na vyber mas:');
              textcolor(15);
              writeln('1-mec Bandituv postrach (200 zlatych)');
-             writeln('2-sekera Trolo-kosic (400 zlatych)');
+             writeln('2-sekera Trolo-kosic (350 zlatych)');
              writeln('3-Zpet');
              readln(a);
              writeln;
@@ -118,7 +118,7 @@ if pokr=0 then
              1:begin if zbran>=2 then begin textcolor(12); writeln('Tuto zbran uz mas nebo uz vlastnis lepsi zbran'); end
                                  else if zlato>=200 then begin textcolor(14); writeln('Koupil jsi mec Bandituv postrach!');   zlato:=zlato-200; zbran:=2; end else begin textcolor(14); writeln('Mas malo penez!');end;end;
              2:begin if zbran>=3 then begin textcolor(12); writeln('Tuto zbran uz mas nebo uz vlastnis lepsi zbran'); end
-                                 else if zlato>=400 then begin textcolor(14); writeln('Koupil jsi sekeru Trolo-kosic!'); zlato:=zlato-400; zbran:=3; end else begin textcolor(14); writeln('Mas malo penez!');end;end;
+                                 else if zlato>=350 then begin textcolor(14); writeln('Koupil jsi  sekeru Trolo-kosic!'); zlato:=zlato-350; zbran:=3; end else begin textcolor(14); writeln('Mas malo penez!');end;end;
              3:pokr:=31;
              else writeln('chyba');
              end;
@@ -210,7 +210,7 @@ if pokr=2 then begin
                    2:
                      begin
                      karma:=1;
-                     if zbran>0 then
+                     if zbran>=1 then
                           begin
                                if zmlacen=true then
                                                    begin
@@ -353,7 +353,7 @@ if pokr=6 then
                          writeln('Zadej akci (1-3)');
                          textcolor(15);
                          writeln('1-Porozhlidnout se po nejake praci');
-                         writeln('2-Naucit se u cvicitele bojovemu umeni (100 zlatych)');
+                         writeln('2-Naucit se u cvicitele bojovemu umeni (50 zlatych)');
                          writeln('3-Vratit se k lesni krizovatce');
                          readln(a);
                          writeln;
@@ -376,8 +376,8 @@ if pokr=6 then
                                 else writeln('chyba');
                                 end;
                            end;
-                         2:begin if (zlato<100) or (boj=1) then begin textcolor(14); writeln('Nemas dostatek penez nebo uz danou dovednost mas naucenou!');end;
-                                 if (zlato>=100) and (boj=0) then begin textcolor(14); writeln('Naucil jsi se zachazet se zbrani');zlato:=zlato-100;boj:=1;writeln('Mas ',zlato,' zlata'); end;
+                         2:begin if (zlato<50) or (boj=1) then begin textcolor(14); writeln('Nemas dostatek penez nebo uz danou dovednost mas naucenou!');end;
+                                 if (zlato>=50) and (boj=0) then begin textcolor(14); writeln('Naucil jsi se zachazet se zbrani');zlato:=zlato-50;boj:=1;writeln('Mas ',zlato,' zlata'); end;
                            end;
                          3:begin textcolor(14); writeln('Dosel jsi k lesni krizovatce'); pokr:=3; end;
                          else writeln('chyba');
@@ -442,7 +442,7 @@ if (pokr=8) and (zub=0) and (lup_b>0) then
                        if karma=1 then begin textcolor(14); writeln('Nedokazal jsi utect banditum. Banditi te zmlatili a okradli, jsi ve meste Segard');pokr:=0;lup_b:=lup_b+zlato;zlato:=0; end;
                      end;
                    2:begin
-                       if (zbran>1) and (boj>0) then begin textcolor(14); writeln('Zmlatil jsi bandity a oloupil jsi je o ',lup_b,' zlata a mas ',zlato+lup_b,' zlata');zlato:=zlato+lup_b;lup_b:=0 end
+                       if (zbran>=2) and (boj>=1) then begin textcolor(14); writeln('Zmlatil jsi bandity a oloupil jsi je o ',lup_b,' zlata a mas ',zlato+lup_b,' zlata');zlato:=zlato+lup_b;lup_b:=0 end
                                                 else begin textcolor(14); writeln('Prohral jsi souboj s bandity, a ti te zmlatili a okradli, jsi ve meste Segard');pokr:=0;lup_b:=lup_b+zlato;zlato:=0; end;
                      end;
                    3:if zlato>=300 then begin textcolor(14); writeln('Banditi te nechali za drobny uplatek projit dal, dosel jsi k Cadrasove vezi');zlato:=zlato-300;pokr:=16;end
@@ -886,7 +886,7 @@ if pokr=17 then
                                          if zbroj<2 then
                                                       begin
                                                         textcolor(14); writeln('Takze ty bys mel zajem o tuto magickou zbroj? Bouzel tech par zlatacku, ktere mas, ti vubec nestaci. Ale kdyby jsi mel pro me neco cenneho, tak bychom se mohli domluvit');
-                                                        writeln; writeln('To, co mas na krku, je troli zub??!! Moc pekny kousek Za ten zub ti tu zbroj dam, plati?');
+                                                        writeln; writeln('To, co mas na krku, je troli zub??!! Moc pekny kousek. K tomu zubu prihod tech par drobnych co mas a ja ti tu zbroj dam, plati?');
                                                         repeat
                                                           writeln;writeln;
                                                           textcolor(11);
@@ -897,7 +897,10 @@ if pokr=17 then
                                                           writeln;
                                                           readln(a);
                                                           case a of
-                                                          1:begin textcolor(14); writeln('Dekuji ti, udelal jsi vyhodny obchod!'); zbroj:=2; pokr:=31; end;
+                                                          1:begin textcolor(14); writeln('Dekuji ti, udelal jsi vyhodny obchod!'); 
+                                                            zbroj:=2; zlato:=0; pokr:=31; 
+                                                            writeln('Mas ',zlato,' zlata');
+                                                          end;
                                                           2:begin textcolor(14); writeln('Haha, uvidis, ze se brzo vratis!'); pokr:=31; end
                                                           else writeln('chyba');
                                                           end;
@@ -1135,7 +1138,7 @@ if (pokr=22) and (zub=0) then
                    writeln;
                    case a of
                    1:begin textcolor(14); writeln('Dosel jsi do lesa'); pokr:=4; end;
-                   2:begin if ((zbran=3) and (boj=1) and (zbroj=1)) or ((zbran=3) and (boj=2)) then
+                   2:begin if ((zbran>=3) and (boj>=1) and (zbroj>=1)) or ((zbran>=3) and (boj>=2)) then
                                                                                                       begin
                                                                                                         textcolor(14);
                                                                                                         writeln('Zautocil jsi na trola a svou mocnou sekerou jsi mu udelal skaredou ranu na leve pazi.');
